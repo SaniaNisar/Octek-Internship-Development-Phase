@@ -1,0 +1,46 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT:-3000}:3001"  # Map port from environment variable or default to 3000
+    depends_on:
+      - redis
+      - db
+    env_file:
+      - .env
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:  
+      - .:/usr/src/app
+    networks: 
+      - my-network
+
+  redis:
+    image: redis:latest
+    ports:
+      - "${REDIS_PORT:-6379}:6379"  # Map port from environment variable or default to 6379
+    volumes:
+      - redis-data:/data
+    networks: 
+      - my-network
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      
+    ports:
+      - "3307:${DB_PORT:-3306}"  # Map port from environment variable or default to 3306
+    volumes:
+      - db-data:/var/lib/mysql
+    networks: 
+      - my-network
+
+networks: 
+  my-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+  db-data:
