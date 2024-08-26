@@ -44,7 +44,11 @@ const BlogPage: React.FC = () => {
     }, []);
 
     return (
-        <Container>
+        <Container 
+            disableGutters 
+            maxWidth={false} 
+            sx={{ paddingLeft: 0, paddingRight: 0, marginLeft: 0, marginRight: 0 }}
+        >
             {allPosts && allPosts.length > 0 && (
                 <BlogList posts={allPosts} />
             )}
