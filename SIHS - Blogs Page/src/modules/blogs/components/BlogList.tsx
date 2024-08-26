@@ -17,8 +17,13 @@ const BlogList: React.FC<BlogListProps> = ({ posts }) => {
     return (
         <Box
             display="grid"
-            gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))"
-            gap={2}
+            gridTemplateColumns={{
+                xs: 'repeat(1, 1fr)', 
+                sm: 'repeat(1, 1fr)', 
+                md: 'repeat(2, 1fr)', 
+                lg: 'repeat(4, 1fr)', 
+            }}
+            gap={1}
         >
             {posts.map(post => (
                 <Card
