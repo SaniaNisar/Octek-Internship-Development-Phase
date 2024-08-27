@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Container, CircularProgress, Typography, Box } from '@mui/material';
 import BlogList from '../components/BlogList';
-import useGetPosts from '../api';
+import {useGetPosts} from '../api';
 
 const BlogPage: React.FC = () => {
     const [page, setPage] = useState(1);
