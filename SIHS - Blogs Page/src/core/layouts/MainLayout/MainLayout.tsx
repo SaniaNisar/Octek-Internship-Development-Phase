@@ -9,7 +9,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Logo from "../../../assets/images/logo.png";
 import icons from '../../../assets/images/icons';
-import { FormControl, InputAdornment, MenuItem, Select, TextField, Typography } from '@mui/material';
+import { FormControl, MenuItem, Select, TextField, Typography, InputAdornment } from '@mui/material';
 import menuItems from './menu';
 import { Search } from '@mui/icons-material';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
@@ -24,17 +24,17 @@ const AppBar = styled(MuiAppBar, {
 	shouldForwardProp: (prop) => prop !== 'open',
 })<AppBarProps>(({ theme, open }) => ({
 	transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-}),
-...(open && {
-	width: "100%",
-	marginLeft: `${drawerWidth}px`,
-	transition: theme.transitions.create(['margin', 'width'], {
-		easing: theme.transitions.easing.easeOut,
-		duration: theme.transitions.duration.enteringScreen,
+		easing: theme.transitions.easing.sharp,
+		duration: theme.transitions.duration.leavingScreen,
 	}),
-}),
+	...(open && {
+		width: "100%",
+		marginLeft: `${drawerWidth}px`,
+		transition: theme.transitions.create(['margin', 'width'], {
+			easing: theme.transitions.easing.easeOut,
+			duration: theme.transitions.duration.enteringScreen,
+		}),
+	}),
 }));
 
 const MainLayout = () => {
@@ -46,7 +46,7 @@ const MainLayout = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: "column" }}>
+    <Box sx={{ display: 'flex', flexDirection: "column", minHeight: '100vh' }}>
       <AppBar position="fixed" sx={{ paddingTop: "10px", backgroundColor: 'white', boxShadow: 'none' }}>
         <Toolbar>
           <Box sx={{ width: drawerWidth - 15 }}>
@@ -84,7 +84,7 @@ const MainLayout = () => {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box sx={{ display: "flex", flexDirection: "row", marginTop: "80px" }}>
+      <Box sx={{ display: "flex", flex: 0.5, flexDirection: "row", marginTop: "80px" }}>
         <Drawer
           PaperProps={{
             sx: { marginTop: "65px" }
@@ -168,11 +168,11 @@ const MainLayout = () => {
             </Box>
           </Box>
         </Drawer>
-        <Box sx={{ padding: "10px", flex: 1 }}>
+        <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', padding: "10px", minHeight: 'calc(100vh - 80px)' }}>
           {location.pathname === '/blogs' && (
             <Typography sx={{ fontSize: "24px", fontWeight: "bold" }}>Blogs</Typography>
           )}
-          <Box sx={{ padding: "10px", marginTop: "10px", height: "calc(100vh - 170px)", backgroundColor: "rgb(250, 250, 250)" }}>
+          <Box sx={{ padding: "10px", marginTop: "10px", flexGrow: 1, backgroundColor: "rgb(250, 250, 250)", overflowY: 'auto' }}>
             <Outlet />
           </Box>
         </Box>
