@@ -10,4 +10,13 @@ Hello! This is a repository for my Octek Internship Development Phase where I wi
 8) SIHS Blog Detail Screen (Frontend & Backend)
 9) SIHS Doctor's screen (Frontend & Backend)
 
+
+- Material UI
+- TypeScript
+- Swagger UI
+- Docker
+- React
+- Redis
+- ORM
+  
 Good Luck*_*
