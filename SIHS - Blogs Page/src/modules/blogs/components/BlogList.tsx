@@ -2,6 +2,7 @@ import React from 'react';
 import { BlogPostWithMediaDto } from '../dtos';
 import { Box, Typography, Card, CardContent, CardMedia, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { formatDistanceToNow } from 'date-fns';
 
 type BlogListProps = {
     posts: Array<BlogPostWithMediaDto>;
@@ -11,7 +12,7 @@ const BlogList: React.FC<BlogListProps> = ({ posts }) => {
     const navigate = useNavigate();
     
     const handleReadMore = (postId: number) => {
-        navigate(`/posts/${postId}`);
+        navigate(`/blogs/${postId}`);
     };
 
     return (
@@ -47,23 +48,26 @@ const BlogList: React.FC<BlogListProps> = ({ posts }) => {
                         <Typography variant="h6" component="div">
                             {post.title.rendered}
                         </Typography>
-                        <Button
-                            variant="contained"
-                            sx={{
-                                marginTop: 'auto', 
-                                width: '100%',
-                                marginBottom: 0,
-                                backgroundColor: '#FFE0E1',
-                                color: '#CF2128',
-                                ":hover": {
-                                    backgroundColor: '#CF2128',
-                                    color: '#FFE0E1',
-                                }
-                            }}
-                            onClick={() => handleReadMore(post.id)}
-                        >
-                            Read More
-                        </Button>
+                        <Box sx={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                            <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 1 }}>
+                                {formatDistanceToNow(new Date(post.date))} ago
+                            </Typography>
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    width: '100%',
+                                    backgroundColor: '#FFE0E1',
+                                    color: '#CF2128',
+                                    ":hover": {
+                                        backgroundColor: '#CF2128',
+                                        color: '#FFE0E1',
+                                    }
+                                }}
+                                onClick={() => handleReadMore(post.id)}
+                            >
+                                Read More
+                            </Button>
+                        </Box>
                     </CardContent>
                 </Card>
             ))}
