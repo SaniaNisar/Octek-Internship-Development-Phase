@@ -10,8 +10,8 @@ Hello! This is a repository for my Octek Internship Development Phase where I wi
 8) SIHS Blog Detail Screen (Frontend & Backend)
 9) SIHS Doctor's screen (Frontend & Backend)
 10) Responsive Side Bar (Frontend & Backend)
-11) App Store Icons on Auth Screens
-12) Dahboard Unread Count
+11) App Store Icons on Auth Screens 
+12) Dashboard Unread Count (Frontend & Backend)
 13) Appointments Screen (Frontend & Backend)
   
 Good Luck*_*
