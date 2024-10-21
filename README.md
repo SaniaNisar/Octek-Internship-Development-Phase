@@ -10,8 +10,11 @@ Hello! This is a repository for my Octek Internship Development Phase where I wi
 8) SIHS - Blog Detail Screen (Frontend & Backend)
 9) SIHS - Doctor's screen (Frontend & Backend)
 10) SIHS - Responsive Side Bar (Frontend & Backend)
-11) SIHS - App Store Icons on Auth Screens 
+11) SIHS - App Store Icons on Auth Screens (Frontend & Backend)
 12) SIHS - Dashboard Unread Count (Frontend & Backend)
 13) SIHS - Appointments Screen (Frontend & Backend)
+14) SIHS - Appointment Cancellation (Frontend & Backend)
+15) SIHS - Adding Upcoming Appointments Card to Dashboard (Frontend & Backend)
+16) SIHS - Sticky Breadcrumbs (Frontend & Backend)
   
 Good Luck*_*
