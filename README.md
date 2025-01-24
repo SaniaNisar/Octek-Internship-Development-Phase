@@ -16,5 +16,7 @@ Hello! This is a repository for my Octek Internship Development Phase where I wi
 14) SIHS - Appointment Cancellation (Frontend & Backend)
 15) SIHS - Adding Upcoming Appointments Card to Dashboard (Frontend & Backend)
 16) SIHS - Sticky Breadcrumbs (Frontend & Backend)
+17) SIHS - Unread Reports Count (Frontend & Backend)
+18) SIHS - Unread Reports in Different Color(Frontend & Backend)
   
 Good Luck*_*
